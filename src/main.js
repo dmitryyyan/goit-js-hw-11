@@ -45,6 +45,12 @@ form.addEventListener('submit', e => {
       })
       .catch(error => {
         console.error('Помилка отримання зображень:', error);
+        iziToast.error({
+          message: `An error occurred while fetching images: ${error.message}`,
+          position: 'topRight',
+          backgroundColor: 'red',
+          messageColor: 'white',
+  });
       })
       .finally(() => {
         loader.style.display = 'none';
